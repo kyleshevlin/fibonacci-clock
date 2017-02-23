@@ -3,7 +3,8 @@ import reducer from '../../app/js/reducers'
 
 const initialState = {
   boxes: [
-    { name: 'box', value: 1 }
+    { name: 'box1a', size: 1, value: 'neither' },
+    { name: 'box1b', size: 1, value: 'neither' },
   ]
 }
 
@@ -14,11 +15,12 @@ describe('Reducers:', () => {
   })
 
   it('UPDATE_BOX updates box with same name with value', () => {
-    const box = { name: 'box' }
-    const value = 'foo'
+    const box = { name: 'box1a', size: 1, value: 'neither' }
+    const value = 'both'
     const expectedState = Object.assign({}, initialState, {
       boxes: [
-        { name: 'box', value: 'foo' }
+        { ...box, value },
+        { name: 'box1b', size: 1, value: 'neither' }
       ]
     })
 

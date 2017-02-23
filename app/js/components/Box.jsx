@@ -1,13 +1,14 @@
 import React, { PropTypes } from 'react'
 
-const Box = ({ name }) => (
+const Box = ({ name, value }) => (
   <div className={`box ${name}`}>
-    {`Box ${name}`}
+    {`Box ${name}: ${value}`}
   </div>
 )
 
 Box.propTypes = {
-  name: PropTypes.string.isRequired
+  name: PropTypes.string,
+  value: PropTypes.string
 }
 
 export default Box

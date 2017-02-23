@@ -1,18 +1,16 @@
 import React from 'react'
-import Box from './Box'
+import { Provider } from 'react-redux'
+import store from '../store'
+import ClockContainer from '../containers/ClockContainer'
 
 const App = () => (
-  <div className='main'>
-    <h1>Fibonacci Clock</h1>
+  <Provider store={store}>
+    <div className='main'>
+      <h1>Fibonacci Clock</h1>
 
-    <div className='clock'>
-      <Box name='one-a' />
-      <Box name='one-b' />
-      <Box name='two' />
-      <Box name='three' />
-      <Box name='five' />
+      <ClockContainer />
     </div>
-  </div>
+  </Provider>
 )
 
 export default App

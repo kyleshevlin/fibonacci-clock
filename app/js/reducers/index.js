@@ -1,6 +1,10 @@
 import * as types from '../constants/actionTypes'
+import { formatTime } from '../helpers'
 
 const initialTime = new Date()
+const initialHours = initialTime.getHours()
+const initialMinutes = initialTime.getMinutes()
+const initialSeconds = initialTime.getSeconds()
 
 const initialState = {
   boxes: [
@@ -31,11 +35,7 @@ const initialState = {
     }
   ],
   colorKey: 'default',
-  currentTime: {
-    hours: initialTime.getHours(),
-    minutes: initialTime.getMinutes(),
-    seconds: initialTime.getSeconds()
-  }
+  currentTime: formatTime(initialHours, initialMinutes, initialSeconds)
 }
 
 const reducer = (state = initialState, action) => {
@@ -57,11 +57,7 @@ const reducer = (state = initialState, action) => {
 
     case types.UPDATE_TIME: {
       return Object.assign({}, state, {
-        currentTime: {
-          hours: action.hours,
-          minutes: action.minutes,
-          seconds: action.seconds
-        }
+        currentTime: formatTime(action.hours, action.minutes, action.seconds)
       })
     }
 

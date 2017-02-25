@@ -6,8 +6,7 @@ const Clock = ({ boxes, colorKey }) => (
     {boxes.map(box => (
       <Box
         key={box.name}
-        name={box.name}
-        represents={box.represents}
+        {...box}
         colorKey={colorKey}
       />
     ))}

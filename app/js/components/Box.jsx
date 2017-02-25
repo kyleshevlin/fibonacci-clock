@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import colors from '../constants/colors'
 
-const Box = ({ name, represents, colorKey }) => {
+const Box = ({ name, size, represents, colorKey }) => {
   let colorIndex = 0
 
   if (represents.length === 1 && represents[0] === 'hours') {
@@ -20,13 +20,14 @@ const Box = ({ name, represents, colorKey }) => {
         transition: 'background-color .5s ease'
       }}
     >
-      {`Box ${name}`}
+      {`Box ${name}: ${size}`}
     </div>
   )
 }
 
 Box.propTypes = {
   name: PropTypes.string,
+  size: PropTypes.number,
   represents: PropTypes.array,
   colorKey: PropTypes.string
 }

@@ -3,11 +3,12 @@ import reducer from '../../app/js/reducers'
 import { formatTime } from '../../app/js/helpers'
 
 const initialState = {
-  currentTime: formatTime(12, 30, 45),
   boxes: [
     { name: 'box1a', size: 1, represents: [] },
     { name: 'box1b', size: 1, represents: [] }
-  ]
+  ],
+  colorKey: 'default',
+  currentTime: formatTime(12, 30, 45)
 }
 
 describe('Reducers:', () => {
@@ -28,6 +29,17 @@ describe('Reducers:', () => {
       expect(
         reducer(initialState, actions.updateTime(hours, minutes, seconds)).currentTime
       ).toEqual(expectedState.currentTime)
+    })
+  })
+
+  describe('UPDATE_COLOR_KEY', () => {
+    it('updates colorKey with key', () => {
+      const key = 'foo'
+      const expectedState = Object.assign({}, initialState, {
+        colorKey: key
+      })
+
+      expect(reducer(initialState, actions.updateColorKey(key))).toEqual(expectedState)
     })
   })
 })

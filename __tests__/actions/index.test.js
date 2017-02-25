@@ -15,4 +15,14 @@ describe('Actions:', () => {
 
     expect(actions.updateTime(hours, minutes, seconds)).toEqual(expectedAction)
   })
+
+  it('updateColorKey should return POJO with key', () => {
+    const key = 'foo'
+    const expectedAction = {
+      type: types.UPDATE_COLOR_KEY,
+      key
+    }
+
+    expect(actions.updateColorKey(key)).toEqual(expectedAction)
+  })
 })

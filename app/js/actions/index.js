@@ -8,3 +8,10 @@ export function updateTime (hours, minutes, seconds) {
     seconds
   }
 }
+
+export function updateColorKey (key) {
+  return {
+    type: types.UPDATE_COLOR_KEY,
+    key
+  }
+}

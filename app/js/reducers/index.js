@@ -24,6 +24,9 @@ const reducer = (state = initialState, action) => {
       })
     }
 
+    case types.UPDATE_COLOR_KEY:
+      return Object.assign({}, state, { colorKey: action.key })
+
     default:
       return state
   }

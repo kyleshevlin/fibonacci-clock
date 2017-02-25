@@ -1,0 +1,30 @@
+//////////////////////////////
+// Legend
+//////////////////////////////
+
+.legend {
+  padding-top: bs(2);
+  padding-bottom: bs(2);
+
+  &-heading {
+    margin-bottom: bs();
+  }
+
+  &-item {
+    margin-bottom: bs();
+
+    &-box {
+      display: inline-block;
+      vertical-align: middle;
+      width: 30px;
+      height: 30px;
+      transition: background-color .5s ease;
+    }
+
+    &-label {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: bs();
+    }
+  }
+}

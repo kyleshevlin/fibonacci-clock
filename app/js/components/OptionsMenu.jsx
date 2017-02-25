@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 import colors from '../constants/colors'
 import OptionsTriggerClose from './OptionsTriggerClose'
+import Legend from './Legend'
 
 const OptionsMenu = ({
   colorKey,
@@ -24,6 +25,8 @@ const OptionsMenu = ({
           <option key={index} value={key}>{key}</option>
         ))}
       </select>
+
+      <Legend colorKey={colorKey} />
     </div>
   )
 }

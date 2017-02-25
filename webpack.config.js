@@ -9,7 +9,7 @@ module.exports = env => ({
   output: {
     path: resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: env.prod ? '/fibonacci-clock/' : '/'
   },
   resolve: {
     extensions: ['.js', '.jsx']

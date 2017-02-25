@@ -1,46 +1,38 @@
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
+import React, { PropTypes } from 'react'
+import classNames from 'classnames'
 import colors from '../constants/colors'
-import { updateColorKey } from '../actions'
+import OptionsTriggerClose from './OptionsTriggerClose'
 
-class OptionsMenu extends Component {
-  constructor () {
-    super()
+const OptionsMenu = ({
+  colorKey,
+  isOptionsOpen,
+  handleSelectChange
+}) => {
+  const menuClasses = classNames(
+    'options_menu',
+    { 'is-open': isOptionsOpen }
+  )
 
-    this.handleSelectChange = this.handleSelectChange.bind(this)
-  }
+  return (
+    <div className={menuClasses}>
+      <h2>Options Menu</h2>
+      <OptionsTriggerClose />
 
-  handleSelectChange (e) {
-    this.props.updateColorKey(e.target.value)
-  }
-
-  render () {
-    return (
-      <div className='options_menu'>
-        <h2>Options Menu</h2>
-
-        <h3>Color Palette</h3>
-        <select value={this.props.colorKey} onChange={this.handleSelectChange}>
-          {Object.keys(colors).map((key, index) => (
-            <option key={index} value={key}>{key}</option>
-          ))}
-        </select>
-      </div>
-    )
-  }
+      <h3>Color Palette</h3>
+      <select value={colorKey} onChange={handleSelectChange}>
+        {Object.keys(colors).map((key, index) => (
+          <option key={index} value={key}>{key}</option>
+        ))}
+      </select>
+    </div>
+  )
 }
 
 OptionsMenu.propTypes = {
   colorKey: PropTypes.string,
+  isOptionsOpen: PropTypes.bool,
+  handleSelectChange: PropTypes.func,
   updateColorKey: PropTypes.func
 }
 
-const mapStateToProps = state => ({
-  colorKey: state.colorKey
-})
-
-const mapDispatchToProps = {
-  updateColorKey
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(OptionsMenu)
+export default OptionsMenu

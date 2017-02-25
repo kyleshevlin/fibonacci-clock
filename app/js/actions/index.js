@@ -15,3 +15,11 @@ export function updateColorKey (key) {
     key
   }
 }
+
+export function openOptions () {
+  return { type: types.OPEN_OPTIONS }
+}
+
+export function closeOptions () {
+  return { type: types.CLOSE_OPTIONS }
+}

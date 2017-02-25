@@ -13,5 +13,8 @@ html {
 }
 
 body {
+  color: $c-black;
   font-family: $f-cabin;
+  position: relative;
+  overflow: hidden;
 }

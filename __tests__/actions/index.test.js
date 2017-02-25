@@ -25,4 +25,9 @@ describe('Actions:', () => {
 
     expect(actions.updateColorKey(key)).toEqual(expectedAction)
   })
+
+  it('openOptions should return POJO of correct type', () => {
+    const expectedAction = { type: types.OPEN_OPTIONS }
+    expect(actions.openOptions()).toEqual(expectedAction)
+  })
 })

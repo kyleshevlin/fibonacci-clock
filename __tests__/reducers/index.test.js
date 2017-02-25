@@ -8,7 +8,8 @@ const initialState = {
     { name: 'box1b', size: 1, represents: [] }
   ],
   colorKey: 'default',
-  currentTime: formatTime(12, 30, 45)
+  currentTime: formatTime(12, 30, 45),
+  isOptionsOpen: false
 }
 
 describe('Reducers:', () => {
@@ -40,6 +41,23 @@ describe('Reducers:', () => {
       })
 
       expect(reducer(initialState, actions.updateColorKey(key))).toEqual(expectedState)
+    })
+  })
+
+  describe('OPEN_OPTIONS', () => {
+    it('openOPtions updates isOptionsOpen to true', () => {
+      const expectedState = Object.assign({}, initialState, { isOptionsOpen: true })
+
+      expect(reducer(initialState, actions.openOptions())).toEqual(expectedState)
+    })
+  })
+
+  describe('CLOSE_OPTIONS', () => {
+    it('closeOptions updates isOptionsOpen to false', () => {
+      const setupState = Object.assign({}, initialState, { isOptionsOpen: true })
+      const expectedState = Object.assign({}, setupState, { isOptionsOpen: false })
+
+      expect(reducer(initialState, actions.closeOptions())).toEqual(expectedState)
     })
   })
 })

@@ -2,10 +2,18 @@
 // Functions
 //////////////////////////////
 
+// Base-Spacing
+@function bs($factor: 1) {
+  $base-spacing: 15px !default;
+  @return $base-spacing * $factor;
+}
+
+// Divide by width units for boxes
 @function byW($numerator: 1) {
   @return ($numerator / 8) * 100%;
 }
 
+// Divide by height units for boxes
 @function byH($numerator: 1) {
   @return ($numerator / 5) * 100%;
 }

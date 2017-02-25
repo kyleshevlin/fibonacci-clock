@@ -10,7 +10,8 @@ const initialSeconds = initialTime.getSeconds()
 const initialState = {
   boxes,
   colorKey: 'default',
-  currentTime: formatTime(initialHours, initialMinutes, initialSeconds)
+  currentTime: formatTime(initialHours, initialMinutes, initialSeconds),
+  isOptionsOpen: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -26,6 +27,12 @@ const reducer = (state = initialState, action) => {
 
     case types.UPDATE_COLOR_KEY:
       return Object.assign({}, state, { colorKey: action.key })
+
+    case types.OPEN_OPTIONS:
+      return Object.assign({}, state, { isOptionsOpen: true })
+
+    case types.CLOSE_OPTIONS:
+      return Object.assign({}, state, { isOptionsOpen: false })
 
     default:
       return state

@@ -1,2 +1,4 @@
 export const UPDATE_TIME = 'UPDATE_TIME'
 export const UPDATE_COLOR_KEY = 'UPDATE_COLOR_KEY'
+export const OPEN_OPTIONS = 'OPEN_OPTIONS'
+export const CLOSE_OPTIONS = 'CLOSE_OPTIONS'

@@ -7,9 +7,11 @@ import UpdateTimeContainer from '../containers/UpdateTimeContainer'
 const App = () => (
   <Provider store={store}>
     <div className='main'>
-      <h1>Fibonacci Clock</h1>
+      <div className='container'>
+        <h1>Fibonacci Clock</h1>
+        <ClockContainer />
+      </div>
 
-      <ClockContainer />
       <UpdateTimeContainer />
     </div>
   </Provider>

@@ -1,0 +1,13 @@
+//////////////////////////////
+// Variables
+//////////////////////////////
+
+// Breakpoints
+$breakpoints: (
+  'alpha': (min-width: 500px),
+  'bravo': (min-width: 769px),
+  'charlie': (min-width: 1025px)
+);
+
+// Fonts
+$f-cabin: 'Cabin', sans-serif;

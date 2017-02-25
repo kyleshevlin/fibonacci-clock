@@ -2,10 +2,17 @@
 // Import all the things
 //////////////////////////////
 
+// Setup
+@import 'setup/reset';
+
 // Globals
 @import
+  'globals/variables',
   'globals/functions',
-  'globals/tags'
+  'globals/mixins',
+  'globals/tags',
+  'globals/typography',
+  'globals/layouts'
 ;
 
 // Components

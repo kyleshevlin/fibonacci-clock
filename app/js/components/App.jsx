@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import store from '../store'
 import Header from './Header'
 import ClockContainer from '../containers/ClockContainer'
+import Instructions from './Instructions'
 import UpdateTimeContainer from '../containers/UpdateTimeContainer'
 import OptionsMenuContainer from '../containers/OptionsMenuContainer'
 
@@ -12,6 +13,7 @@ const App = () => (
       <div className='container'>
         <Header />
         <ClockContainer />
+        <Instructions />
       </div>
 
       <OptionsMenuContainer />

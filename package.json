@@ -10,7 +10,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "start": "webpack-dev-server --env.dev --hot"
+    "start": "webpack-dev-server --env.dev --hot",
+    "build:prod": "webpack -p --env.prod"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.3",

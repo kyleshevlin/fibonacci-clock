@@ -9,6 +9,7 @@ const initialState = {
   ],
   colorKey: 'default',
   currentTime: formatTime(12, 30, 45),
+  areNumbersVisible: true,
   isOptionsOpen: false
 }
 
@@ -58,6 +59,14 @@ describe('Reducers:', () => {
       const expectedState = Object.assign({}, setupState, { isOptionsOpen: false })
 
       expect(reducer(initialState, actions.closeOptions())).toEqual(expectedState)
+    })
+  })
+
+  describe('TOGGLE_NUMBERS', () => {
+    it('togglesNumbers toggles areNumbersVisible', () => {
+      const expectedState = Object.assign({}, initialState, { areNumbersVisible: !initialState.areNumbersVisible })
+
+      expect(reducer(initialState, actions.toggleNumbers())).toEqual(expectedState)
     })
   })
 })

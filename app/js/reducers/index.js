@@ -11,6 +11,7 @@ const initialState = {
   boxes,
   colorKey: 'default',
   currentTime: formatTime(initialHours, initialMinutes, initialSeconds),
+  areNumbersVisible: true,
   isOptionsOpen: false
 }
 
@@ -33,6 +34,9 @@ const reducer = (state = initialState, action) => {
 
     case types.CLOSE_OPTIONS:
       return Object.assign({}, state, { isOptionsOpen: false })
+
+    case types.TOGGLE_NUMBERS:
+      return Object.assign({}, state, { areNumbersVisible: !state.areNumbersVisible })
 
     default:
       return state

@@ -14,19 +14,27 @@ class ClockContainer extends Component {
   }
 
   render () {
-    return <Clock boxes={this.props.boxes} colorKey={this.props.colorKey} />
+    return (
+      <Clock
+        boxes={this.props.boxes}
+        colorKey={this.props.colorKey}
+        areNumbersVisible={this.props.areNumbersVisible}
+      />
+    )
   }
 }
 
 ClockContainer.propTypes = {
   boxes: PropTypes.array,
   colorKey: PropTypes.string,
-  updateTime: PropTypes.func
+  updateTime: PropTypes.func,
+  areNumbersVisible: PropTypes.bool
 }
 
 const mapStateToProps = state => ({
   boxes: state.boxes,
-  colorKey: state.colorKey
+  colorKey: state.colorKey,
+  areNumbersVisible: state.areNumbersVisible
 })
 
 const mapDispatchToProps = {

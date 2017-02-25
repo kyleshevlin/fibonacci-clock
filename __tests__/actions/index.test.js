@@ -30,4 +30,9 @@ describe('Actions:', () => {
     const expectedAction = { type: types.OPEN_OPTIONS }
     expect(actions.openOptions()).toEqual(expectedAction)
   })
+
+  it('toggleNumbers should return POJO of correct type', () => {
+    const expectedAction = { type: types.TOGGLE_NUMBERS }
+    expect(actions.toggleNumbers()).toEqual(expectedAction)
+  })
 })

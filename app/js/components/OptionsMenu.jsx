@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import classNames from 'classnames'
 import colors from '../constants/colors'
 import OptionsTriggerClose from './OptionsTriggerClose'
+import NumbersToggle from './NumbersToggle'
 import Legend from './Legend'
 
 const OptionsMenu = ({
@@ -18,6 +19,7 @@ const OptionsMenu = ({
     <div className={menuClasses}>
       <h2>Options Menu</h2>
       <OptionsTriggerClose />
+      <NumbersToggle />
 
       <h3>Color Palette</h3>
       <select value={colorKey} onChange={handleSelectChange}>

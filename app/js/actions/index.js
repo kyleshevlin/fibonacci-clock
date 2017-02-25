@@ -23,3 +23,7 @@ export function openOptions () {
 export function closeOptions () {
   return { type: types.CLOSE_OPTIONS }
 }
+
+export function toggleNumbers () {
+  return { type: types.TOGGLE_NUMBERS }
+}

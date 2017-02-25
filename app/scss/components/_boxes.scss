@@ -69,6 +69,11 @@
   }
 
   &-size {
-    opacity: .85;
+    opacity: 0;
+    transition: opacity .5s ease;
+
+    .clock.numbers-are-visible & {
+      opacity: .85;
+    }
   }
 }

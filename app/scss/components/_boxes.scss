@@ -1,0 +1,48 @@
+//////////////////////////////
+// Boxes
+//////////////////////////////
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 2px solid black;
+  position: absolute;
+
+  &-1a,
+  &-1b {
+    width: byW();
+    height: byH();
+  }
+
+  &-1a {
+    top: 0;
+    left: byW(2);
+  }
+
+  &-1b {
+    top: byH();
+    left: byW(2);
+  }
+
+  &-2 {
+    width: byW(2);
+    height: byH(2);
+    top: 0;
+    left: 0;
+  }
+
+  &-3 {
+    width: byW(3);
+    height: byH(3);
+    bottom: 0;
+    left: 0;
+  }
+
+  &-5 {
+    width: byW(5);
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+}

@@ -17,10 +17,13 @@ const Box = ({ name, size, represents, colorKey }) => {
       className={`box ${name}`}
       style={{
         backgroundColor: colors[colorKey][colorIndex],
-        transition: 'background-color .5s ease'
+        color: colorIndex ? '#fff' : '#000',
+        transition: 'background-color .5s ease, color .5s ease'
       }}
     >
-      {`Box ${name}: ${size}`}
+      <div className='box-size'>
+        {size}
+      </div>
     </div>
   )
 }

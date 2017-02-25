@@ -1,0 +1,11 @@
+//////////////////////////////
+// Functions
+//////////////////////////////
+
+@function byW($numerator: 1) {
+  @return ($numerator / 8) * 100%;
+}
+
+@function byH($numerator: 1) {
+  @return ($numerator / 5) * 100%;
+}

@@ -4,7 +4,12 @@ import Box from './Box'
 const Clock = ({ boxes, colorKey }) => (
   <div className='clock'>
     {boxes.map(box => (
-      <Box key={box.name} {...box} colorKey={colorKey} />
+      <Box
+        key={box.name}
+        name={box.name}
+        represents={box.represents}
+        colorKey={colorKey}
+      />
     ))}
   </div>
 )

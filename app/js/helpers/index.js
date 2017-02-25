@@ -1,3 +1,5 @@
+import boxCombos from '../constants/boxCombos'
+
 export function formatHours (hours) {
   if (hours === 0) {
     return 12
@@ -26,4 +28,34 @@ export function formatTime (hours, minutes, seconds) {
     hours: adjustedHours,
     minutes: adjustedMinutes
   }
+}
+
+function getRandomCombo (value) {
+  const combosForValue = boxCombos[value]
+  let randomCombo = []
+
+  if (combosForValue.length) {
+    randomCombo = combosForValue[Math.floor(Math.random() * combosForValue.length)]
+  }
+
+  return randomCombo
+}
+
+export function updateBoxes (boxes, hours, minutes) {
+  const comboForHours = getRandomCombo(hours)
+  const comboForMinutes = getRandomCombo(minutes / 5)
+
+  return boxes.map((box, index) => {
+    const represents = []
+
+    if (comboForHours.includes(index)) {
+      represents.push('hours')
+    }
+
+    if (comboForMinutes.includes(index)) {
+      represents.push('minutes')
+    }
+
+    return Object.assign({}, box, { represents })
+  })
 }

@@ -5,8 +5,8 @@ import { formatTime } from '../../app/js/helpers'
 const initialState = {
   currentTime: formatTime(12, 30, 45),
   boxes: [
-    { name: 'box1a', size: 1, value: 'neither' },
-    { name: 'box1b', size: 1, value: 'neither' }
+    { name: 'box1a', size: 1, represents: [] },
+    { name: 'box1b', size: 1, represents: [] }
   ]
 }
 
@@ -16,27 +16,18 @@ describe('Reducers:', () => {
     expect(reducer(initialState, unaccountedFor)).toEqual(initialState)
   })
 
-  it('UPDATE_BOX updates box with same name with value', () => {
-    const box = { name: 'box1a', size: 1, value: 'neither' }
-    const value = 'both'
-    const expectedState = Object.assign({}, initialState, {
-      boxes: [
-        { ...box, value },
-        { name: 'box1b', size: 1, value: 'neither' }
-      ]
+  describe('UPDATE_TIME', () => {
+    it('updates currentTime with hours and minutes', () => {
+      const hours = 14
+      const minutes = 15
+      const seconds = 20
+      const expectedState = Object.assign({}, initialState, {
+        currentTime: formatTime(hours, minutes, seconds)
+      })
+
+      expect(
+        reducer(initialState, actions.updateTime(hours, minutes, seconds)).currentTime
+      ).toEqual(expectedState.currentTime)
     })
-
-    expect(reducer(initialState, actions.updateBox(box, value))).toEqual(expectedState)
-  })
-
-  it('UPDATE_TIME updates currentTime with hours and minutes', () => {
-    const hours = 14
-    const minutes = 15
-    const seconds = 20
-    const expectedState = Object.assign({}, initialState, {
-      currentTime: formatTime(hours, minutes, seconds)
-    })
-
-    expect(reducer(initialState, actions.updateTime(hours, minutes, seconds))).toEqual(expectedState)
   })
 })

@@ -21,7 +21,7 @@ class UpdateTimeContainer extends Component {
   }
 
   startClock () {
-    this.intervalId = setInterval(this.getCurrentTime, 5000)
+    this.intervalId = setInterval(this.getCurrentTime, 1000 * 15)
   }
 
   stopClock () {

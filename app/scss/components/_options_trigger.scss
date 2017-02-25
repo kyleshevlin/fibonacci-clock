@@ -1,0 +1,59 @@
+//////////////////////////////
+// Options Trigger
+//////////////////////////////
+
+.options_trigger {
+  display: inline-block;
+  background-color: transparent;
+  font-family: $f-cabin;
+  font-size: 14px;
+  line-height: 1;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  @include bp(bravo) {
+    font-size: 20px;
+  }
+
+  &--open {
+    @extend .options_trigger;
+
+    &-arrow {
+      display: inline-block;
+      width: 9px;
+      margin-left: 5px;
+
+      @include bp(bravo) {
+        width: 11px;
+        margin-left: 8px;
+      }
+
+      path {
+        stroke-width: 3px;
+        stroke: $c-black;
+      }
+    }
+  }
+
+  &--close {
+    @extend .options_trigger;
+    color: $c-white;
+
+    &-arrow {
+      display: inline-block;
+      width: 9px;
+      margin-right: 5px;
+
+      @include bp(bravo) {
+        width: 11px;
+        margin-right: 8px;
+      }
+
+      path {
+        stroke-width: 3px;
+        stroke: $c-white;
+      }
+    }
+  }
+}

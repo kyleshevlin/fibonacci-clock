@@ -10,11 +10,13 @@
 
 html {
   box-sizing: border-box;
+  font-family: $f-cabin;
+  font-size: 100%;
+  line-height: 1.5;
 }
 
 body {
   color: $c-black;
-  font-family: $f-cabin;
   position: relative;
   overflow: hidden;
 }

@@ -1,0 +1,18 @@
+//////////////////////////////
+// Header
+//////////////////////////////
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: bs(2);
+
+  @include bp(bravo) {
+    margin-bottom: bs(3);
+  }
+
+  &-heading {
+    margin-bottom: 0;
+  }
+}

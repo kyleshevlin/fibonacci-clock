@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 import classNames from 'classnames'
-import colors from '../constants/colors'
 import OptionsTriggerClose from './OptionsTriggerClose'
 import NumbersToggle from './NumbersToggle'
+import ColorPaletteSelect from './ColorPaletteSelect'
 import Legend from './Legend'
 
 const OptionsMenu = ({
@@ -17,17 +17,14 @@ const OptionsMenu = ({
 
   return (
     <div className={menuClasses}>
-      <h2>Options Menu</h2>
       <OptionsTriggerClose />
+
+      <h3 className='options_menu-heading'>Options</h3>
       <NumbersToggle />
-
-      <h3>Color Palette</h3>
-      <select value={colorKey} onChange={handleSelectChange}>
-        {Object.keys(colors).map((key, index) => (
-          <option key={index} value={key}>{key}</option>
-        ))}
-      </select>
-
+      <ColorPaletteSelect
+        colorKey={colorKey}
+        handleSelectChange={handleSelectChange}
+      />
       <Legend colorKey={colorKey} />
     </div>
   )

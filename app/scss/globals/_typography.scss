@@ -2,10 +2,14 @@
 // Typography
 //////////////////////////////
 
-h1 {
-  font-size: 24px;
+@include body;
+@include headings;
+@include content;
 
-  @include bp(bravo) {
-    font-size: 48px;
-  }
-}
+// h1 {
+//   font-size: 24px;
+
+//   @include bp(bravo) {
+//     font-size: 48px;
+//   }
+// }

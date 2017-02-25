@@ -6,9 +6,16 @@ class NumbersToggle extends Component {
   render () {
     return (
       <div className='numbers_toggle'>
-        <h3 className='numbers_toggle-heading'>Toggle Numbers On/Off</h3>
+        <label
+          htmlFor='numbers_toggle'
+          className='numbers_toggle-label'
+        >
+          Toggle Numbers On/Off
+        </label>
+
         <input
           className='numbers_toggle-checkbox'
+          name='numbers_toggle'
           type='checkbox'
           checked={this.props.areNumbersVisible}
           onChange={this.props.toggleNumbers}

@@ -5,6 +5,11 @@
 // Setup
 @import 'setup/reset';
 
+// Third Party
+@import
+  '../../node_modules/shevy/core/shevy'
+;
+
 // Globals
 @import
   'globals/variables',
@@ -19,8 +24,10 @@
 @import
   'components/boxes',
   'components/clock',
+  'components/color_palette_select',
   'components/header',
   'components/legend',
+  'components/numbers_toggle',
   'components/options_menu',
   'components/options_trigger'
 ;

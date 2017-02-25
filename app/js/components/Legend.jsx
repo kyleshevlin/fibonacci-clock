@@ -5,7 +5,7 @@ const colorLabels = ['Neither', 'Hours', 'Minutes', 'Both']
 
 const Legend = ({ colorKey }) => (
   <div className='legend'>
-    <h3 className='legend-heading'>Legend</h3>
+    <h4 className='legend-heading'>Legend</h4>
 
     {colors[colorKey].map((color, index) => (
       <div key={index} className='legend-item'>

@@ -39,6 +39,7 @@
   &--close {
     @extend .options_trigger;
     color: $c-white;
+    margin-bottom: bs(2);
 
     &-arrow {
       display: inline-block;

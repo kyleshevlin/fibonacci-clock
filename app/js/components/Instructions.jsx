@@ -9,11 +9,15 @@ const Instructions = () => (
     </p>
 
     <p>
-      First, calculate the hours by counting all of the red and blue squares.
+      Each square has a value associated with it. In this case, the value is the length of one of its sides. Hence, the sequence of 1, 1, 2, 3, 5.
     </p>
 
     <p>
-      Second, calculate the minutes by counting all the green and blue squares and multiplying by 5.
+      To calculate the hours, add up the value of the red and blue squares.
+    </p>
+
+    <p>
+      Then, to calculate the minutes, add up the values of the green and blue squares, then multiply this value by 5.
     </p>
 
     <p>

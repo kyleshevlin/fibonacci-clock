@@ -6,10 +6,6 @@
 @include headings;
 @include content;
 
-// h1 {
-//   font-size: 24px;
-
-//   @include bp(bravo) {
-//     font-size: 48px;
-//   }
-// }
+p {
+  max-width: 32em;
+}

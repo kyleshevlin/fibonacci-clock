@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const { resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = env => ({
   context: resolve(__dirname, 'app'),
@@ -57,6 +58,11 @@ module.exports = env => ({
     }),
     new HtmlWebpackPlugin({
       template: './templates/index.ejs',
+      title: 'Fibonacci Clock'
+    }),
+    new FaviconsWebpackPlugin({
+      logo: './assets/images/Fibonacci-Clock-Favicon.png',
+      background: '#fff',
       title: 'Fibonacci Clock'
     }),
     new ExtractTextPlugin('styles.css')
